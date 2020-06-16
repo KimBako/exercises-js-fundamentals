@@ -26,36 +26,27 @@ let helpers = require('../printHelpers');
  *
  * @param {number} height - The height of the triangle to print
  */
-function printInvertedSolidRightTriangle(height) {
-  /*
-    Reflect: given `height`...
-    1. How many lines to we want to print?
-    2. How many characters should be on each line?
-  */
-  for (let i = 0; i < height; i++) {
-    let numChars = _____;
-
-    helpers.printCountTimes('#', numChars);
-    helpers.printNewLine();
+function printInvertedSolidRightTriangle(heightTri) {
+  for (let i = 0; i < heightTri; i++) {
+    var output = ''
+    for (let j = 0; j < heightTri - i; j++) output += ' ';
+    for (let k = 0; k <= i; k++) output += '*';
+    console.log(output);
   }
 }
 
-/**
- * For testing purposes, prints a diagram of the given height.
- */
-function invertedSolidRightTriangleTest(height) {
+function invertedSolidRightTriangleTest(heightTri) {
   console.log('');
-  console.log(`Printing a INVERTED SOLID RIGHT TRIANGLE of height ${height}:`);
+  console.log(`Printing a INVERTED SOLID RIGHT TRIANGLE of height ${heightTri}:`);
 
-  printInvertedSolidRightTriangle(height);
+  printInvertedSolidRightTriangle(5);
 }
 
 if (require.main === module) {
-  invertedSolidRightTriangleTest(1);
-  invertedSolidRightTriangleTest(2);
-  invertedSolidRightTriangleTest(4);
-  invertedSolidRightTriangleTest(6);
-  invertedSolidRightTriangleTest(10);
+  console.log(invertedSolidRightTriangleTest(1));
+  console.log(invertedSolidRightTriangleTest(2));
+  console.log(invertedSolidRightTriangleTest(4));
+  console.log(invertedSolidRightTriangleTest(6));
+  console.log(invertedSolidRightTriangleTest(10));
 }
-
 module.exports = printInvertedSolidRightTriangle;
